@@ -54,6 +54,8 @@ class Macrow
   end
 
   def apply_all_rules(str, object = nil)
+    return if str.nil? || !str.is_a?(String)
+
     dup_str = str.dup
 
     self.class.rule_words.each do |rule_word|

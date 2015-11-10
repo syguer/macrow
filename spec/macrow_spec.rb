@@ -34,6 +34,24 @@ describe Macrow do
       it { is_expected.to eq '2' }
     end
 
+    context "when str is nil" do
+      let (:macro) { HogeMacro.new }
+      let (:str) { '${ping}' }
+
+      subject { macro.apply_all_rules(nil) }
+
+      it { is_expected.to eq nil }
+    end
+
+    context "when str is not string" do
+      let (:macro) { HogeMacro.new }
+      let (:str) { '${ping}' }
+
+      subject { macro.apply_all_rules([]) }
+
+      it { is_expected.to eq nil }
+    end
+
     context "when unexpected object given and method not found" do
       let (:macro) { MethodNotFoundMacro.new }
       let (:str) { '${hoge}' }
