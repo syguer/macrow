@@ -45,7 +45,7 @@ macro.apply("${something} happened") # you can use short alias
 
 array = [1, 2]
 macro.apply("object length is ${length}", array) # you can pass an object
-# => "object length is ${length}"
+# => "object length is 2"
 
 ```
 
