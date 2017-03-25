@@ -1,4 +1,7 @@
 # Macrow
+[![TravisCI Build Status](https://travis-ci.org/syguer/macrow.svg?branch=master)](http://travis-ci.org/syguer/macrow)
+[![Code Climate](https://codeclimate.com/github/syguer/macrow.svg)](https://codeclimate.com/github/syguer/macrow)
+
 This gem provide DSL for define rules of text replacing. It makes the code more readable and helps avoinding fat model.
 
 ## Installation
