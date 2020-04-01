@@ -29,7 +29,7 @@ class Macrow
       define_method "apply_rule_for_#{keyword}!" do |str, object|
         if str.include? replace_string(keyword)
           begin
-            str.gsub!(replace_string(keyword), block.call(object).to_s)
+            str.gsub!(replace_string(keyword), instance_exec(object, &block).to_s)
             str
           rescue NoMethodError => e
             fail Macrow::ReplaceError, "NoMethodError is raised on applying rule: '#{keyword}'. Please check your rule. Error message is '#{e.message}'"
